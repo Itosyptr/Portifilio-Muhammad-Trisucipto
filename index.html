@@ -20,7 +20,14 @@
     }
     /* Kelas untuk animasi sembunyi/tampil navigasi */
     .nav-hidden {
-        transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+    /* Styling untuk menu mobile */
+    .mobile-menu {
+        display: none;
+    }
+    .mobile-menu.active {
+        display: block;
     }
   </style>
 </head>
@@ -36,14 +43,26 @@
       <li class="hover:text-white transition-colors duration-300"><a href="#portfolio">Portfolio</a></li>
       <li class="hover:text-white transition-colors duration-300"><a href="#contact">Contact</a></li>
     </ul>
-    <button class="md:hidden text-gray-300 text-2xl">&#9776;</button>
-</nav>
+    <button id="menu-button" class="md:hidden text-gray-300 text-2xl">&#9776;</button>
+  </nav>
+
+  <div id="mobile-menu" class="mobile-menu md:hidden bg-gray-900 border-b border-gray-800">
+      <ul class="flex flex-col items-center gap-4 py-4 text-sm font-medium text-gray-400">
+          <li><a href="#home" class="hover:text-white transition-colors duration-300">Home</a></li>
+          <li><a href="#about" class="hover:text-white transition-colors duration-300">About</a></li>
+          <li><a href="#skills" class="hover:text-white transition-colors duration-300">Skills</a></li>
+          <li><a href="#riwayat" class="hover:text-white transition-colors duration-300">Riwayat</a></li>
+          <li><a href="#portfolio" class="hover:text-white transition-colors duration-300">Portfolio</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a></li>
+      </ul>
+  </div>
+
 
   <main class="container mx-auto px-6">
 
     <section id="home" class="h-screen flex items-center justify-center text-center">
       <div class="max-w-4xl flex flex-col items-center">
-        <img src="../image/propil.jpg" alt="Foto Profil Ito" class="w-32 h-32 rounded-full mb-6 border-4 border-gray-800 object-cover">
+        <img src="image/propil.jpg" alt="Foto Profil Ito" class="w-48 h-48 rounded-full mb-6 border-4 border-gray-800 object-cover">
         <h2 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight">
           Muhammad <span class="text-blue-500">Trisucipto</span>
         </h2>
@@ -54,7 +73,7 @@
           Mahasiswa Teknik Telekomunikasi dengan semangat untuk menjembatani infrastruktur jaringan dengan pengembangan aplikasi mobile yang inovatif.
         </p>
         <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
-            <a href="cv-cipto.pdf" download class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+            <a href="cv_cipto.pdf" download class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 transform hover:scale-105">
               Unduh CV (PDF)
             </a>
             <a href="#contact" class="bg-gray-800 text-white font-semibold py-3 px-6 rounded-full hover:bg-gray-700 transition duration-300">
@@ -156,66 +175,13 @@
 
                 <div class="relative">
                     <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">2018 - 2021</p>
-                    <h4 class="text-xl font-bold text-white mt-1">Teknik Jaringan Akses</h4>
-                    <p class="text-md text-gray-500">SMK Telkom Makassar</p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">2021 - Sekarang</p>
-                    <h4 class="text-xl font-bold text-white mt-1">S1 Teknik Telekomunikasi</h4>
-                    <p class="text-md text-gray-500">Telkom University, Bandung</p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">2022</p>
-                    <h4 class="text-xl font-bold text-white mt-1">Panitia PKKMB (Divisi Liaison Officer)</h4>
-                    <p class="text-md text-gray-500">Telkom University</p>
+                    <p class="text-sm font-medium text-blue-400">April 2024 - Jul 2024</p>
+                    <h4 class="text-xl font-bold text-white mt-1">Capstone Project: AIREAL</h4>
+                    <p class="text-md text-gray-500">Tim Proyek - Bangkit Academy</p>
                     <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
-                        <li>Membimbing dan menjadi narahubung utama bagi mahasiswa baru angkatan 2022.</li>
-                    </ul>
-                </div>
-                
-                <div class="relative">
-                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">2022</p>
-                    <h4 class="text-xl font-bold text-white mt-1">Panitia Gathrak (Divisi Pendanaan)</h4>
-                    <p class="text-md text-gray-500">Telkom University</p>
-                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
-                        <li>Mengelola logistik dan penjualan untuk kegiatan penggalangan dana.</li>
-                        <li>Menjalin kerja sama dengan vendor untuk produksi merchandise acara.</li>
-                    </ul>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">2023</p>
-                    <h4 class="text-xl font-bold text-white mt-1">Staff Muda Kaderisasi Lanjut</h4>
-                    <p class="text-md text-gray-500">Himpunan Mahasiswa Teknik Telekomunikasi (HMTT)</p>
-                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
-                        <li>Menjabat sebagai Koordinator Humas untuk acara "Feedback 2023".</li>
-                    </ul>
-                </div>
-                
-                <div class="relative">
-                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">2023</p>
-                    <h4 class="text-xl font-bold text-white mt-1">Staff Ahli Kaderisasi Lanjut</h4>
-                    <p class="text-md text-gray-500">Himpunan Mahasiswa Teknik Telekomunikasi (HMTT)</p>
-                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
-                        <li>Berkontribusi dalam pengelolaan program "Scholarship 2023" untuk anggota himpunan.</li>
-                    </ul>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">2023</p>
-                    <h4 class="text-xl font-bold text-white mt-1">Panitia PKKMB (Divisi Liaison Officer)</h4>
-                    <p class="text-md text-gray-500">Telkom University</p>
-                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
-                        <li>Membimbing dan mengarahkan mahasiswa baru angkatan 2023 selama masa orientasi.</li>
+                        <li>Berkolaborasi dalam tim untuk merancang dan membangun aplikasi e-commerce fungsional.</li>
+                        <li>Mengimplementasikan fitur deteksi gambar buram (blur) untuk validasi kualitas unggahan produk.</li>
+                        <li>Bertujuan meningkatkan kualitas etalase digital UMKM dan mencegah potensi penipuan.</li>
                     </ul>
                 </div>
                 
@@ -233,14 +199,67 @@
 
                 <div class="relative">
                     <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
-                    <p class="text-sm font-medium text-blue-400">Feb 2024 - Jul 2024</p>
-                    <h4 class="text-xl font-bold text-white mt-1">Capstone Project: Aplikasi E-commerce Anti-Penipuan</h4>
-                    <p class="text-md text-gray-500">Tim Proyek - Bangkit Academy</p>
+                    <p class="text-sm font-medium text-blue-400">2023</p>
+                    <h4 class="text-xl font-bold text-white mt-1">Panitia PKKMB (Divisi Liaison Officer)</h4>
+                    <p class="text-md text-gray-500">Telkom University</p>
                     <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
-                        <li>Berkolaborasi dalam tim untuk merancang dan membangun aplikasi e-commerce fungsional.</li>
-                        <li>Mengimplementasikan fitur deteksi gambar buram (blur) untuk validasi kualitas unggahan produk.</li>
-                        <li>Bertujuan meningkatkan kualitas etalase digital UMKM dan mencegah potensi penipuan.</li>
+                        <li>Membimbing dan mengarahkan mahasiswa baru angkatan 2023 selama masa orientasi.</li>
                     </ul>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
+                    <p class="text-sm font-medium text-blue-400">2023</p>
+                    <h4 class="text-xl font-bold text-white mt-1">Staff Ahli Kaderisasi Lanjut</h4>
+                    <p class="text-md text-gray-500">Himpunan Mahasiswa Teknik Telekomunikasi (HMTT)</p>
+                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
+                        <li>Berkontribusi dalam pengelolaan program "Scholarship 2023" untuk anggota himpunan.</li>
+                    </ul>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
+                    <p class="text-sm font-medium text-blue-400">2023</p>
+                    <h4 class="text-xl font-bold text-white mt-1">Staff Muda Kaderisasi Lanjut</h4>
+                    <p class="text-md text-gray-500">Himpunan Mahasiswa Teknik Telekomunikasi (HMTT)</p>
+                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
+                        <li>Menjabat sebagai Koordinator Humas untuk acara "Feedback 2023".</li>
+                    </ul>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
+                    <p class="text-sm font-medium text-blue-400">2022</p>
+                    <h4 class="text-xl font-bold text-white mt-1">Panitia Gathrak (Divisi Pendanaan)</h4>
+                    <p class="text-md text-gray-500">Telkom University</p>
+                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
+                        <li>Mengelola logistik dan penjualan untuk kegiatan penggalangan dana.</li>
+                        <li>Menjalin kerja sama dengan vendor untuk produksi merchandise acara.</li>
+                    </ul>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
+                    <p class="text-sm font-medium text-blue-400">2022</p>
+                    <h4 class="text-xl font-bold text-white mt-1">Panitia PKKMB (Divisi Liaison Officer)</h4>
+                    <p class="text-md text-gray-500">Telkom University</p>
+                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2 text-justify">
+                        <li>Membimbing dan menjadi narahubung utama bagi mahasiswa baru angkatan 2022.</li>
+                    </ul>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
+                    <p class="text-sm font-medium text-blue-400">2021 - Sekarang</p>
+                    <h4 class="text-xl font-bold text-white mt-1">S1 Teknik Telekomunikasi</h4>
+                    <p class="text-md text-gray-500">Telkom University, Bandung</p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-10 h-4 w-4 bg-blue-500 rounded-full -translate-x-1/2"></div>
+                    <p class="text-sm font-medium text-blue-400">2018 - 2021</p>
+                    <h4 class="text-xl font-bold text-white mt-1">Teknik Jaringan Akses</h4>
+                    <p class="text-md text-gray-500">SMK Telkom Makassar</p>
                 </div>
                 
             </div>
@@ -249,21 +268,21 @@
 
     <section id="portfolio" class="py-24 md:py-32">
       <div class="text-center mb-16">
-        <h3 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Karya Pilihan</h3>
-        <p class="mt-4 text-lg text-gray-400">Beberapa proyek yang telah saya hidupkan.</p>
+        <h3 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Karya Saya</h3>
+        <p class="mt-4 text-lg text-gray-400">Beberapa proyek yang telah saya Kerjakan.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="group bg-gray-900 rounded-2xl overflow-hidden h-full flex flex-col transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
-          <img src="../image/logosd.png" alt="Smart Door Lock Project" class="w-full h-56 object-cover">
+          <img src="image/logosd.png" alt="Smart Door Lock Project" class="w-full h-56 object-cover">
           <div class="p-8 flex-grow">
             <h4 class="text-2xl font-bold text-white">Capstone Project: Smart Door Lock</h4>
             <p class="mt-2 text-gray-400">Mengembangkan sistem kunci pintu pintar untuk Tugas Akhir S1, mengimplementasikan verifikasi ganda (suara & sidik jari) yang terhubung ke perangkat IoT dan selenoid door lock melalui aplikasi Android.</p>
           </div>
         </div>
         <div class="group bg-gray-900 rounded-2xl overflow-hidden h-full flex flex-col transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
-          <img src="../image/blur.png" alt="AI E-Commerce Project" class="w-full h-56 object-cover">
+          <img src="image/blur.png" alt="AI E-Commerce Project" class="w-full h-56 object-cover">
           <div class="p-8 flex-grow">
-            <h4 class="text-2xl font-bold text-white">Project Bangkit: AI E-Commerce</h4>
+            <h4 class="text-2xl font-bold text-white">Project Bangkit: AIREAL</h4>
             <p class="mt-2 text-gray-400">Aplikasi e-commerce inovatif yang dikembangkan sebagai bagian dari Bangkit Academy, dengan fitur unggulan deteksi gambar buram (blur) untuk memastikan kualitas visual produk dan mencegah penipuan.</p>
           </div>
         </div>
@@ -275,18 +294,18 @@
           <h3 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Mari Terhubung</h3>
           <p class="mt-4 text-lg text-gray-400 mb-10">Saya terbuka untuk diskusi mengenai proyek baru atau peluang karir. Jangan ragu untuk menghubungi saya.</p>
           <div class="bg-gray-900 p-8 rounded-2xl text-left">
-            <form>
+            <form action="https://formspree.io/f/mrbkaldv" method="POST">
                 <div class="mb-4">
                   <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nama</label>
-                  <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
                 <div class="mb-4">
                   <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                  <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
                 <div class="mb-6">
                   <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Pesan</label>
-                  <textarea id="message" rows="5" class="w-full bg-gray-800 border border-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                  <textarea id="message" name="message" rows="5" class="w-full bg-gray-800 border border-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
                 </div>
                 <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition duration-300">Kirim Pesan</button>
             </form>
@@ -306,14 +325,15 @@
             <a href="https://github.com/Itosyptr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300">GitHub</a>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p>&copy; 2025 Muhammad Trisucipto. All rights reserved.</p>
-        <p>Dibuat dengan penuh niat<span class=></span> dan Tailwind CSS</p>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <p class="mb-2 md:mb-0">&copy; 2025 Muhammad Trisucipto. All rights reserved.</p>
+        <p>Dibuat menggunakan Tailwind CSS</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // Script untuk menyembunyikan navbar saat scroll ke bawah
     const navbar = document.getElementById('navbar');
     let lastScrollTop = 0;
 
@@ -326,6 +346,23 @@
       }
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
     }, false);
+
+    // Script untuk toggle menu mobile
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Menutup menu mobile jika link di-klik
+    const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+    for (let i = 0; i < mobileMenuLinks.length; i++) {
+        mobileMenuLinks[i].addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+        });
+    }
+
   </script>
 
 </body>
